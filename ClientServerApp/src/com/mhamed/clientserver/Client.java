@@ -37,8 +37,8 @@ public class Client {
 
     public static void main(String[] args) throws Exception {
         Client client = new Client(
-                InetAddress.getByName("9.211.127.115"),
-                Integer.parseInt("58140"));
+                InetAddress.getByName(args[0]),
+                Integer.parseInt(args[1]));
 
         System.out.println("\r\nConnected to Server: " + client.socket.getInetAddress());
         client.start();

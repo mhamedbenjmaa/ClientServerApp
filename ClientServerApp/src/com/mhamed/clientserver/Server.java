@@ -18,10 +18,12 @@ import java.net.Socket;
 public class Server {
 
     private ServerSocket server;
+    
 
     public Server(String ipAddress) throws Exception {
 
         this.server = new ServerSocket(0, 1, InetAddress.getByName(ipAddress));
+        
 
     }
 
