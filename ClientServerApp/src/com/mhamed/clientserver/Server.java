@@ -20,16 +20,16 @@ public class Server {
     private ServerSocket server;
     
 
-    public Server(String ipAddress) throws Exception {
+    public Server(String ipAddress, int port) throws Exception {
 
-        this.server = new ServerSocket(0, 1, InetAddress.getByName(ipAddress));
+        this.server = new ServerSocket(port, 1, InetAddress.getByName(ipAddress));
         
 
     }
 
-    public Server() throws Exception {
+    public Server(int port) throws Exception {
 
-        this.server = new ServerSocket(45024, 1, InetAddress.getLocalHost());
+        this.server = new ServerSocket(port, 1, InetAddress.getLocalHost());
 
     }
 
@@ -57,9 +57,9 @@ public class Server {
     public static void main(String[] args) throws Exception {
         Server app = null;
         if (args.length == 0) {
-            app = new Server();
+            app = new Server(Integer.parseInt(args[0]));
         } else {
-            app = new Server(args[0]);
+            app = new Server(args[0],Integer.parseInt(args[1]));
         }
 
         System.out.println("\r\nRunning Server: "
