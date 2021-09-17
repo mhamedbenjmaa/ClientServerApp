@@ -29,7 +29,7 @@ public class Server {
 
     public Server() throws Exception {
 
-        this.server = new ServerSocket(0, 1, InetAddress.getLocalHost());
+        this.server = new ServerSocket(45024, 1, InetAddress.getLocalHost());
 
     }
 
