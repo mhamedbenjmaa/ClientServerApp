@@ -56,10 +56,13 @@ public class Server {
 
     public static void main(String[] args) throws Exception {
         Server app = null;
-        if (args.length == 0) {
+        if (args.length == 1) {
             app = new Server(Integer.parseInt(args[0]));
-        } else {
+        } else if (args.length == 1) {
             app = new Server(args[0],Integer.parseInt(args[1]));
+        }else {
+            System.out.println("Error, the server takes 1 param as port or two params as ip and port");
+            System.exit(-1);
         }
 
         System.out.println("\r\nRunning Server: "
