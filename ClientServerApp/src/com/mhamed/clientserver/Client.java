@@ -36,6 +36,7 @@ public class Client {
     }
 
     public static void main(String[] args) throws Exception {
+        System.out.println("try to connect to"+args[0]+":"+args[1]);
         Client client = new Client(
                 InetAddress.getByName(args[0]),
                 Integer.parseInt(args[1]));
